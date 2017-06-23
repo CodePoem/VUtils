@@ -38,13 +38,13 @@ def siteUrl = 'https://github.com/CodePoem'
 //项目的git地址
 def gitUrl = 'https://github.com/CodePoem/Vutils.git'
 //发布到JCenter上的项目名字
-def libName = "Vutils"
+def libName = "vutils"
 
 //发布到组织名称名字，必须填写
-group = "codepoem.CircleView"
+group = "codevvv.Vutils.vutils"
 // 版本号，下次更新是只需要更改版本号即可
 version = "1.0.0"
-//上面配置后上传至JCenter后的编译路径是这样的： compile 'codepoem.CircleView:library:1.0.0'
+//上面配置后上传至JCenter后的编译路径是这样的： compile 'codevvv.Vutils.vutils:library:1.0.0'
 
 //生成源文件
 task sourcesJar(type: Jar) {
@@ -96,9 +96,9 @@ install {
                 developers {
                     developer {
                         //开发者的个人信息
-                        id 'codepoem'
+                        id 'codevvv'
                         name 'DengYongbiao'
-                        email 'dyb@nit.zju.edu.cn'
+                        email 'codepoetdream@gmail.com'
                     }
                 }
                 scm {
@@ -121,7 +121,7 @@ bintray {
     configurations = ['archives']
     pkg {
         //这里的repo值必须要和你创建Maven仓库的时候的名字一样
-        repo = "mrv"
+        repo = "maven"
         //发布到JCenter上的项目名字
         name = libName
         //项目描述

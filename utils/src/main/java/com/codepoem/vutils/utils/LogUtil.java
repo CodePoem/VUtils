@@ -3,7 +3,7 @@ package com.codepoem.vutils.utils;
 import android.util.Log;
 
 /**
- * Created by dyb on 2016/10/20.
+ * 日志工具类
  */
 public class LogUtil {
     public static final int VERBOSE = 1;
