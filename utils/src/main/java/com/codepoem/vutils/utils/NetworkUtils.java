@@ -9,9 +9,15 @@ import android.telephony.TelephonyManager;
 import java.util.List;
 
 /**
- * 网络工具类
+ * @author dyb
+ * @createTime 2017/9/11 13:23
  */
 public class NetworkUtils {
+
+    private NetworkUtils() {
+        /* cannot be instantiated */
+        throw new UnsupportedOperationException("cannot be instantiated");
+    }
 
     /**
      * 网络是否可用

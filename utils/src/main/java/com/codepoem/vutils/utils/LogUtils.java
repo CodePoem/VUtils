@@ -3,9 +3,11 @@ package com.codepoem.vutils.utils;
 import android.util.Log;
 
 /**
- * Created by dyb on 2016/10/20.
+ * @author dyb
+ * @createTime 2017/9/11 13:22
  */
-public class LogUtil {
+
+public class LogUtils {
     public static final int VERBOSE = 1;
     public static final int DEBUG = 2;
     public static final int INFO = 3;
@@ -13,6 +15,11 @@ public class LogUtil {
     public static final int ERROR = 5;
     public static final int NOTHING = 6;
     public static final int LEVEL = VERBOSE;
+
+    private LogUtils() {
+        /* cannot be instantiated */
+        throw new UnsupportedOperationException("cannot be instantiated");
+    }
 
     public static void v(String tag, String msg) {
         if (LEVEL <= VERBOSE) {
