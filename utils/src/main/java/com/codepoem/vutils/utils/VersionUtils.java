@@ -4,11 +4,6 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 
-/**
- * @author dyb
- * @createTime 2017/9/11 13:42
- */
-
 public class VersionUtils {
 
     private VersionUtils() {

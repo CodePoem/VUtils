@@ -2,11 +2,6 @@ package com.codepoem.vutils.utils;
 
 import android.util.Log;
 
-/**
- * @author dyb
- * @createTime 2017/9/11 13:22
- */
-
 public class LogUtils {
     public static final int VERBOSE = 1;
     public static final int DEBUG = 2;

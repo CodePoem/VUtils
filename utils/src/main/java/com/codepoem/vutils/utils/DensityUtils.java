@@ -3,11 +3,6 @@ package com.codepoem.vutils.utils;
 import android.content.Context;
 import android.util.TypedValue;
 
-/**
- * @author dyb
- * @createTime 2017/9/11 14:15
- */
-
 public class DensityUtils {
     private DensityUtils() {
         /* cannot be instantiated */

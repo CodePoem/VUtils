@@ -4,11 +4,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
-/**
- * @author dyb
- * @createTime 2017/9/11 13:27
- */
-
 public class ViewUtils {
 
     private ViewUtils() {

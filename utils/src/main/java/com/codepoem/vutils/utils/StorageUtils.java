@@ -13,11 +13,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-/**
- * @author dyb
- * @createTime 2017/9/11 13:21
- */
-
 public class StorageUtils {
 
     private StorageUtils() {

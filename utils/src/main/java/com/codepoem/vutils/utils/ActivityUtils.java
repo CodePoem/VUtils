@@ -4,11 +4,6 @@ import android.app.Activity;
 
 import java.util.Stack;
 
-/**
- * @author dyb
- * @createTime 2017/9/11 13:14
- */
-
 public class ActivityUtils {
     private static Stack<Activity> mActivityStack;
     private static volatile ActivityUtils mScreenManager;

@@ -7,11 +7,6 @@ import android.graphics.Rect;
 import android.util.DisplayMetrics;
 import android.view.View;
 
-/**
- * @author dyb
- * @createTime 2017/9/11 13:42
- */
-
 public class ScreenUtils {
 
     private ScreenUtils() {

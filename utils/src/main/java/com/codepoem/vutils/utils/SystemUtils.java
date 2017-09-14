@@ -6,11 +6,6 @@ import android.telephony.TelephonyManager;
 
 import java.util.Locale;
 
-/**
- * @author dyb
- * @createTime 2017/9/11 13:23
- */
-
 public class SystemUtils {
 
     private SystemUtils() {

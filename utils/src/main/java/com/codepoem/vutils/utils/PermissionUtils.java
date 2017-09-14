@@ -12,11 +12,6 @@ import android.support.v4.content.ContextCompat;
 
 import java.util.List;
 
-/**
- * @author dyb
- * @createTime 2017/9/11 13:17
- */
-
 public class PermissionUtils {
 
     public static final int UTILS_PERMISSION_REQUEST_CODE = 8069;//工具类权限请求码

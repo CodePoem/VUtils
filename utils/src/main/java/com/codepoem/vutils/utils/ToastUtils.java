@@ -12,11 +12,6 @@ import java.lang.ref.WeakReference;
 import static android.widget.Toast.LENGTH_LONG;
 import static android.widget.Toast.LENGTH_SHORT;
 
-/**
- * @author dyb
- * @createTime 2017/9/11 13:24
- */
-
 public class ToastUtils {
 
     private static Toast toast = null;  // Global Toast

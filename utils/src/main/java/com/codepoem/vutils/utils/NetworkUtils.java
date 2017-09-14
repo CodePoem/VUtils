@@ -8,10 +8,6 @@ import android.telephony.TelephonyManager;
 
 import java.util.List;
 
-/**
- * @author dyb
- * @createTime 2017/9/11 13:23
- */
 public class NetworkUtils {
 
     private NetworkUtils() {
