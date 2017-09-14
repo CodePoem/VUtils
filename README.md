@@ -12,7 +12,7 @@ You can use it by these ways:
 <dependency>
   <groupId>codevvv.Vutils.vutils</groupId>
   <artifactId>utils</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <type>pom</type>
 </dependency>
 ```
@@ -20,13 +20,13 @@ You can use it by these ways:
 2.Gradle
 
 ```
-compile 'codevvv.Vutils.vutils:utils:1.0.0'
+compile 'codevvv.Vutils.vutils:utils:1.0.1'
 ```
 
 3.vy
 
 ```
-<dependency org='codevvv.Vutils.vutils' name='utils' rev='1.0.0'>
+<dependency org='codevvv.Vutils.vutils' name='utils' rev='1.0.1'>
   <artifact name='utils' ext='pom' ></artifact>
 </dependency>
 ```
