@@ -1,0 +1,114 @@
+// bintray插件
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+// 发布到组织名称名字，必须填写
+group = BINTRA_PKG_GROUP
+// 版本号，下次更新是只需要更改版本号即可
+version = BINTRAY_PKG_VERSION
+// 发布到JCenter上的项目名字
+def libName = BINTRAY_PKG_LIBNAME
+// 项目主页
+def siteUrl = BINTRAY_PKG_SITEURL
+// 项目的git地址
+def gitUrl = BINTRAY_PKG_GITURL
+
+// 生成源文件
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+// 生成Javadoc文档
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+// 文档打包成jar
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+// 拷贝javadoc文件
+task copyDoc(type: Copy) {
+    from "${buildDir}/docs/"
+    into "docs"
+}
+
+// 上传到JCenter所需要的源码文件
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+// 配置maven库，生成POM.xml文件
+install {
+    repositories.mavenInstaller {
+        // This generates POM.xml with proper parameters
+        pom {
+            project {
+                packaging 'aar'
+                // 项目描述，随意填
+                name BINTRAY_PKG_DESC
+                url siteUrl
+                licenses {
+                    license {
+                        // 开源协议
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        // 开发者的个人信息
+                        id BINTRAY_DEVELOPER_ID
+                        name BINTRAY_DEVELOPER_NAME
+                        email BINTRAY_DEVELOPER_EMAIL
+                    }
+                }
+                scm {
+                    connection gitUrl
+                    developerConnection gitUrl
+                    url siteUrl
+                }
+            }
+        }
+    }
+}
+
+// 上传到JCenter
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+bintray {
+    // 读取 项目根目录下local.properties 文件里面的 BINTRAY_USER
+    user = properties.getProperty("BINTRAY_USER")
+    // 读取 项目根目录下local.properties 文件里面的 BINTRAY_APIKEY
+    key = properties.getProperty("BINTRAY_APIKEY")
+    configurations = ['archives']
+    pkg {
+        // 这里的repo值必须要和你创建Maven仓库的时候的名字一样
+        repo = "maven"
+        // 发布到JCenter上的项目名字
+        name = libName
+        // 项目描述
+        desc = BINTRAY_PKG_DESC
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = ["Apache-2.0"]
+        publish = true
+    }
+}
+
+javadoc {
+    options{
+        //如果你的项目里面有中文注释的话，必须将格式设置为UTF-8，不然会出现乱码
+        encoding "UTF-8"
+        charSet 'UTF-8'
+        author true
+        version true
+        links "http://docs.oracle.com/javase/7/docs/api"
+    }
+}
