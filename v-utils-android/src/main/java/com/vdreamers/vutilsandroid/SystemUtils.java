@@ -1,4 +1,4 @@
-package com.codepoem.vutils.utils;
+package com.vdreamers.vutilsandroid;
 
 import android.app.Activity;
 import android.content.Context;

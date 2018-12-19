@@ -33,10 +33,6 @@ dependencies {
     })
 
     implementation rootProject.ext.dependencies["supportV7AppcompatVersion"]
-    implementation rootProject.ext.dependencies["vUtilsJava"]
-    implementation rootProject.ext.dependencies["vUtilsAndroid"]
-//    implementation project(':v-utils-android')
-//    implementation project(':v-utils-java')
 }
 
 apply from: "$rootProject.projectDir/bintrayUpload.gradle"

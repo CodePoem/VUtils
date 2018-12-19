@@ -14,15 +14,9 @@ def siteUrl = BINTRAY_PKG_SITEURL
 def gitUrl = BINTRAY_PKG_GITURL
 
 // 生成源文件
-task sourcesJar(type: Jar) {
-    from android.sourceSets.main.java.srcDirs
+task sourcesJar(type: Jar, dependsOn: classes) {
+    from sourceSets.main.allSource
     classifier = 'sources'
-}
-
-// 生成Javadoc文档
-task javadoc(type: Javadoc) {
-    source = android.sourceSets.main.java.srcDirs
-    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
 }
 
 // 文档打包成jar
@@ -49,7 +43,7 @@ install {
         // This generates POM.xml with proper parameters
         pom {
             project {
-                packaging 'aar'
+                packaging BINTRAY_PACKAGING
                 // 项目描述，随意填
                 name BINTRAY_PKG_DESC
                 url siteUrl
