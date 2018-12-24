@@ -38,8 +38,8 @@ ext {
             "supportDesignVersion"        : "com.android.support:design:${supportV7Version}",
             "supportFragment"             : "com.android.support:support-fragment:${supportV7Version}",
             "supportV7MediarouterVersion" : "com.android.support:mediarouter-v7:${supportV7Version}",
-            "vUtils"                      : "com.vdreamers.vutils:v-utils:1.0.2",
-            "vUtilsJava"                  : "com.vdreamers.vutils:v-utils-java:1.0.1",
-            "vUtilsAndroid"               : "com.vdreamers.vutils:v-utils-android:1.0.1",
+            "vUtils"                      : "com.vdreamers.vutils:v-utils:1.0.3",
+            "vUtilsAndroid"               : "com.vdreamers.vutils:v-utils-android:1.0.5",
+            "vUtilsJava"                  : "com.vdreamers.vutils:v-utils-java:1.0.4",
     ]
 }

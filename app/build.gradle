@@ -32,6 +32,6 @@ dependencies {
     })
 
     implementation rootProject.ext.dependencies["supportV7AppcompatVersion"]
-//    implementation rootProject.ext.dependencies["vUtils"]
+    implementation rootProject.ext.dependencies["vUtils"]
 //    implementation project(':v-utils')
 }
