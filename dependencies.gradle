@@ -5,6 +5,7 @@ def powerMockitoVersion = "1.6.5"
 def hamcrestVersion = "1.3"
 def rulesVersion = "1.0.2"
 def mockitoVersion = "2.4.0"
+def robolectricVersion = "4.1"
 
 ext {
     android = [
@@ -27,6 +28,7 @@ ext {
             "runnerVersion"         : "com.android.support.test:runner:${rulesVersion}",
             "runnerRulesVersion"    : "com.android.support.test:rules:${rulesVersion}",
             "mockitoVersion"        : "org.mockito:mockito-core:${mockitoVersion}",
+            "robolectricVersion"    : "org.robolectric:robolectric:${robolectricVersion}",
     ]
 
     dependencies = [
