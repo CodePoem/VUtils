@@ -7,14 +7,29 @@ import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Process;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 
 import java.util.List;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
+/**
+ * 权限工具类
+ * <p>
+ * date 2019/03/15 01:10:26
+ *
+ * @author <a href="mailto:codepoetdream@gmail.com">Mr.D</a>
+ */
 public class PermissionUtils {
 
-    public static final int UTILS_PERMISSION_REQUEST_CODE = 8069;//工具类权限请求码
+    /**
+     * 权限工具类请求码
+     */
+    public static final int PERMISSION_UTILS_REQUEST_CODE = 8069;
+    /**
+     * 权限工具类标签
+     */
+    private static final String TAG = "PermissionUtils";
 
     private PermissionUtils() {
         /* cannot be instantiated */
@@ -73,19 +88,19 @@ public class PermissionUtils {
                         .getPackageName());
                 switch (checkOp) {
                     case AppOpsManager.MODE_ALLOWED:
-                        LogUtils.d("PermissionUtils", "权限:允许");
+                        LogUtils.d(TAG, "权限:允许");
                         checkOpResult = true;
                         break;
                     case AppOpsManager.MODE_IGNORED:
-                        LogUtils.d("PermissionUtils", "权限:拒绝");
+                        LogUtils.d(TAG, "权限:拒绝");
                         checkOpResult = false;
                         break;
                     case AppOpsManager.MODE_ERRORED:
-                        LogUtils.d("PermissionUtils", "权限:错误");
+                        LogUtils.d(TAG, "权限:错误");
                         checkOpResult = false;
                         break;
                     case 4:
-                        LogUtils.d("PermissionUtils", "权限:询问");
+                        LogUtils.d(TAG, "权限:询问");
                         checkOpResult = false;
                         break;
                     default:
@@ -107,6 +122,6 @@ public class PermissionUtils {
     public static void requestPermission(Activity activity, List<String> normalPermissions) {
         int normalPermissionsNumber = normalPermissions.size();
         ActivityCompat.requestPermissions(activity, normalPermissions.toArray(new
-                String[normalPermissionsNumber]), UTILS_PERMISSION_REQUEST_CODE);
+                String[normalPermissionsNumber]), PERMISSION_UTILS_REQUEST_CODE);
     }
 }

@@ -3,6 +3,14 @@ package com.vdreamers.vutilsandroid;
 import android.content.Context;
 import android.util.TypedValue;
 
+
+/**
+ * 屏幕密度尺寸相关工具类
+ * <p>
+ * date 2019/01/15 11:10:30
+ *
+ * @author <a href="mailto:codepoetdream@gmail.com">Mr.D</a>
+ */
 public class DensityUtils {
     private DensityUtils() {
         /* cannot be instantiated */
