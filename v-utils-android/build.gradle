@@ -32,13 +32,12 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    testImplementation rootProject.ext.testDependencies["junitVersion"]
-    androidTestImplementation(rootProject.ext.testDependencies["espressoVersion"], {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    testImplementation rootProject.ext.testDependencies["robolectricVersion"]
+    testImplementation rootProject.ext.testDependencies['junit']
+    androidTestImplementation rootProject.ext.testDependencies['androidxTestExtJunit']
+    androidTestImplementation rootProject.ext.testDependencies['androidxTestEspressoCore']
+    testImplementation rootProject.ext.testDependencies["robolectric"]
 
-    implementation rootProject.ext.dependencies["supportV7AppcompatVersion"]
+    implementation rootProject.ext.dependencies["androidxAppcompat"]
 }
 
 apply from: "$rootProject.projectDir/bintrayUpload.gradle"

@@ -1,11 +1,11 @@
-def supportV7Version = "28.0.0"
-def junitVersion = "4.12"
-def espressoVersion = "3.0.2"
-def powerMockitoVersion = "1.6.5"
-def hamcrestVersion = "1.3"
-def rulesVersion = "1.0.2"
-def mockitoVersion = "2.4.0"
-def robolectricVersion = "4.1"
+// Test package version
+def junitVer = "4.12"
+def androidxTestExtJunitVer = "1.1.0"
+def androidxTestEspressoCoreVer = "3.1.1"
+def robolectric = "4.2"
+// normal package version
+def androidxAppcompatVer = "1.0.0"
+def androidxConstraintLayoutVer = "1.1.3"
 
 ext {
     android = [
@@ -18,30 +18,17 @@ ext {
     ]
 
     testDependencies = [
-            "junitVersion"          : "junit:junit:${junitVersion}",
-            "espressoVersion"       : "com.android.support.test.espresso:espresso-core:${espressoVersion}",
-            "hamcrestVersion"       : "org.hamcrest:hamcrest-all:${hamcrestVersion}",
-            "hamcrestLibVersion"    : "org.hamcrest:hamcrest-library:${hamcrestVersion}",
-            "powerModuleVersion"    : "org.powermock:powermock-module-junit4:${powerMockitoVersion}",
-            "powerModuleRuleVersion": "org.powermock:powermock-module-junit4-rule:${powerMockitoVersion}",
-            "powerMockitoVersion"   : "org.powermock:powermock-api-mockito:${powerMockitoVersion}",
-            "runnerVersion"         : "com.android.support.test:runner:${rulesVersion}",
-            "runnerRulesVersion"    : "com.android.support.test:rules:${rulesVersion}",
-            "mockitoVersion"        : "org.mockito:mockito-core:${mockitoVersion}",
-            "robolectricVersion"    : "org.robolectric:robolectric:${robolectricVersion}",
+            "junit"                   : "junit:junit:${junitVer}",
+            "androidxTestExtJunit"    : "androidx.test.ext:junit:${androidxTestExtJunitVer}",
+            "androidxTestEspressoCore": "androidx.test.espresso:espresso-core:${androidxTestEspressoCoreVer}",
+            "robolectric"             : "org.robolectric:robolectric:${robolectric}",
     ]
 
     dependencies = [
-            "support-annotation"          : "com.android.support:support-annotations:${supportV7Version}",
-            "supportV7AppcompatVersion"   : "com.android.support:appcompat-v7:${supportV7Version}",
-            "supportV4AppcompatVersion"   : "com.android.support:support-v4:${supportV7Version}",
-            "supportV7RecyclerviewVersion": "com.android.support:recyclerview-v7:${supportV7Version}",
-            "supportV7GridlayoutVersion"  : "com.android.support:gridlayout-v7:${supportV7Version}",
-            "supportDesignVersion"        : "com.android.support:design:${supportV7Version}",
-            "supportFragment"             : "com.android.support:support-fragment:${supportV7Version}",
-            "supportV7MediarouterVersion" : "com.android.support:mediarouter-v7:${supportV7Version}",
-            "vUtils"                      : "com.vdreamers.vutils:v-utils:1.0.3",
-            "vUtilsAndroid"               : "com.vdreamers.vutils:v-utils-android:1.0.5",
-            "vUtilsJava"                  : "com.vdreamers.vutils:v-utils-java:1.0.4",
+            "androidxAppcompat"       : "androidx.appcompat:appcompat:${androidxAppcompatVer}",
+            "androidxConstraintLayout": "androidx.constraintlayout:constraintlayout:${androidxConstraintLayoutVer}",
+            "vUtils"                  : "com.vdreamers.vutils:v-utils:1.0.3",
+            "vUtilsAndroid"           : "com.vdreamers.vutils:v-utils-android:1.0.5",
+            "vUtilsJava"              : "com.vdreamers.vutils:v-utils-java:1.0.4",
     ]
 }

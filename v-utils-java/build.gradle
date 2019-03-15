@@ -3,7 +3,7 @@ apply plugin: 'java-library'
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    testImplementation rootProject.ext.testDependencies["junitVersion"]
+    testImplementation rootProject.ext.testDependencies['junit']
 }
 
 sourceCompatibility = JavaVersion.VERSION_1_8
