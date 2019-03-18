@@ -1,13 +1,14 @@
 package com.vdreamers.vutilsandroid;
 
 import android.app.Application;
-import android.support.annotation.IntDef;
-import android.support.annotation.StringRes;
 import android.widget.Toast;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.ref.WeakReference;
+
+import androidx.annotation.IntDef;
+import androidx.annotation.StringRes;
 
 import static android.widget.Toast.LENGTH_LONG;
 import static android.widget.Toast.LENGTH_SHORT;

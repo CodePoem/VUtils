@@ -32,6 +32,6 @@ dependencies {
 
     implementation rootProject.ext.dependencies["androidxAppcompat"]
     implementation rootProject.ext.dependencies["androidxConstraintLayout"]
-    implementation rootProject.ext.dependencies["vUtils"]
-//    implementation project(':v-utils')
+//    implementation rootProject.ext.dependencies["vUtils"]
+    implementation project(':v-utils')
 }

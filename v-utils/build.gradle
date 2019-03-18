@@ -32,10 +32,10 @@ dependencies {
     androidTestImplementation rootProject.ext.testDependencies['androidxTestEspressoCore']
 
     implementation rootProject.ext.dependencies["androidxAppcompat"]
-    implementation rootProject.ext.dependencies["vUtilsJava"]
-    implementation rootProject.ext.dependencies["vUtilsAndroid"]
-//    implementation project(':v-utils-android')
-//    implementation project(':v-utils-java')
+//    implementation rootProject.ext.dependencies["vUtilsJava"]
+//    implementation rootProject.ext.dependencies["vUtilsAndroid"]
+    api project(':v-utils-android')
+    api project(':v-utils-java')
 }
 
 apply from: "$rootProject.projectDir/bintrayUpload.gradle"
