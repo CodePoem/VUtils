@@ -1,0 +1,14 @@
+<resources>
+    <string name="vs_app_name">VUtils</string>
+    <string name="vs_btn_text_check_take_photo">检查拍照权限</string>
+    <string name="vs_btn_text_check_sound">检查录音权限</string>
+    <string name="vs_btn_text_check_store">检查存储权限</string>
+    <string name="vs_btn_text_check_multi">检查多个权限</string>
+    <string name="vs_btn_text_request_store">申请存储权限</string>
+    <string name="vs_btn_text_request_sound">申请录音权限</string>
+    <string name="vs_btn_text_select_photo">选择图片</string>
+    <string name="vs_btn_text_record_sound">开始录音</string>
+    <string name="vs_btn_text_request_take_photo">申请拍照权限</string>
+    <string name="vs_btn_text_take_photo">拍照</string>
+    <string name="vs_btn_text_request_multi">申请多个权限</string>
+</resources>

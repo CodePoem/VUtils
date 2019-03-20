@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <files-path
+        path="."
+        name="files_temp" />
+    <cache-path
+        path="."
+        name="cache_temp" />
+    <external-path
+        path="."
+        name="external_temp" />
+    <external-cache-path
+        path="."
+        name="external_cache_temp" />
+    <external-files-path
+        path="."
+        name="external_files_temp" />
+    <root-path
+        path="."
+        name="root_content_temp" />
+</paths>

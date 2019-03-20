@@ -1,1 +1,1 @@
-include ':app', ':v-utils', ':v-utils-android', ':v-utils-java'
+include ':sample', ':v-utils', ':v-utils-android', ':v-utils-java'

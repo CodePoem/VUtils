@@ -13,9 +13,19 @@ import androidx.annotation.StringRes;
 import static android.widget.Toast.LENGTH_LONG;
 import static android.widget.Toast.LENGTH_SHORT;
 
+/**
+ * 原生提示相关工具类
+ * <p>
+ * date 2019/03/20 14:40:03
+ *
+ * @author <a href="mailto:codepoetdream@gmail.com">Mr.D</a>
+ */
 public class ToastUtils {
 
-    private static Toast toast = null;  // Global Toast
+    /**
+     * Global Toast
+     */
+    private static Toast toast = null;
     private static final String TAG = "AppToast";
     private static WeakReference<Application> app;
 
@@ -29,7 +39,7 @@ public class ToastUtils {
      *                    application node of the AndroidManifest file.</b>
      */
     public static void init(Application application) {
-        app = new WeakReference<Application>(application);
+        app = new WeakReference<>(application);
     }
 
     /**
@@ -104,16 +114,6 @@ public class ToastUtils {
         clearToast();
         toast = Toast.makeText(app.get(), "", LENGTH_SHORT);
         return toast;
-    }
-
-    /**
-     * Get a global Application
-     *
-     * @return global Application
-     */
-    @Deprecated
-    public static Application getApplication() {
-        return app.get();
     }
 
     /**
