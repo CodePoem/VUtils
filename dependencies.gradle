@@ -28,8 +28,8 @@ ext {
     dependencies = [
             "androidxAppcompat"       : "androidx.appcompat:appcompat:${androidxAppcompatVer}",
             "androidxConstraintLayout": "androidx.constraintlayout:constraintlayout:${androidxConstraintLayoutVer}",
-            "vUtils"                  : "com.vdreamers.vutils:v-utils:1.0.3",
-            "vUtilsAndroid"           : "com.vdreamers.vutils:v-utils-android:1.0.5",
-            "vUtilsJava"              : "com.vdreamers.vutils:v-utils-java:1.0.4",
+            "vUtils"                  : "com.vdreamers.vutils:v-utils:1.0.6",
+            "vUtilsAndroid"           : "com.vdreamers.vutils:v-utils-android:1.0.6",
+            "vUtilsJava"              : "com.vdreamers.vutils:v-utils-java:1.0.6",
     ]
 }

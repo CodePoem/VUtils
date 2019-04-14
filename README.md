@@ -13,7 +13,7 @@ VUtils groups contains three module.
 ### Gradle
 
 ```
-compile 'com.vdreamers.vutils:v-utils:1.0.3'
+compile 'com.vdreamers.vutils:v-utils:1.0.6'
 ```
 
 ## VUitlsAndroid is our utils for Android.
@@ -21,7 +21,7 @@ compile 'com.vdreamers.vutils:v-utils:1.0.3'
 ### Gradle
 
 ```
-compile 'com.vdreamers.vutils:v-utils-android:1.0.5'
+compile 'com.vdreamers.vutils:v-utils-android:1.0.6'
 ```
 
 ## VUtilsJava is our utils for java.
@@ -29,5 +29,5 @@ compile 'com.vdreamers.vutils:v-utils-android:1.0.5'
 ### Gradle
 
 ```
-compile 'com.vdreamers.vutils:v-utils-java:1.0.4'
+compile 'com.vdreamers.vutils:v-utils-java:1.0.6'
 ```
