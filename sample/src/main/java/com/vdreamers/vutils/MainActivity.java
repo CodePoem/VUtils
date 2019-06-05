@@ -17,5 +17,9 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_permission).setOnClickListener(v -> {
             PermissionActivity.actionStart(MainActivity.this);
         });
+
+        findViewById(R.id.btn_storage).setOnClickListener(v -> {
+            StorageActivity.actionStart(MainActivity.this);
+        });
     }
 }

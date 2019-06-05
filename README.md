@@ -31,3 +31,5 @@ compile 'com.vdreamers.vutils:v-utils-android:1.0.6'
 ```
 compile 'com.vdreamers.vutils:v-utils-java:1.0.6'
 ```
+
+## [ChangeLog](CHANGELOG.md)

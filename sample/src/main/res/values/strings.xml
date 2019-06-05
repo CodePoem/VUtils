@@ -1,5 +1,7 @@
 <resources>
     <string name="vs_app_name">VUtils</string>
+    <string name="vs_permission_utils">权限工具</string>
+    <string name="vs_storage_utils">存储工具</string>
     <string name="vs_btn_text_check_take_photo">检查拍照权限</string>
     <string name="vs_btn_text_check_sound">检查录音权限</string>
     <string name="vs_btn_text_check_store">检查存储权限</string>
@@ -11,4 +13,16 @@
     <string name="vs_btn_text_request_take_photo">申请拍照权限</string>
     <string name="vs_btn_text_take_photo">拍照</string>
     <string name="vs_btn_text_request_multi">申请多个权限</string>
+    <string name="vs_text_title_internal_dir">内部存储目录：</string>
+    <string name="vs_text_title_internal_dir_file">内部存储目录普通文件目录：</string>
+    <string name="vs_text_title_internal_dir_cache">内部存储目录普通缓存目录：</string>
+    <string name="vs_text_title_external_dir">外部存储目录：</string>
+    <string name="vs_text_title_external_dir_private_file">外部存储目录私有目录普通文件目录：</string>
+    <string name="vs_text_title_external_dir_private_cache">外部存储目录私有目录缓存文件目录：</string>
+    <string name="vs_text_title_external_dir_public">外部存储目录公共目录：</string>
+    <string name="vs_text_title_internal_total_size">内部存储总容量（byte）：</string>
+    <string name="vs_text_title_internal_free_size">内部存储剩余可用容量（byte）:</string>
+    <string name="vs_text_title_external_total_size">外部存储总容量（byte）：</string>
+    <string name="vs_text_title_external_free_size">外部存储剩余可用容量（byte）:</string>
+
 </resources>

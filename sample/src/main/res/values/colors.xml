@@ -3,4 +3,6 @@
     <color name="colorPrimary" tools:ignore="ResourceName">#3F51B5</color>
     <color name="colorPrimaryDark" tools:ignore="ResourceName">#303F9F</color>
     <color name="colorAccent" tools:ignore="ResourceName">#FF4081</color>
+    <color name="vs_red_primary">#F4511E</color>
+    <color name="vs_blue_primary">#039BE5</color>
 </resources>

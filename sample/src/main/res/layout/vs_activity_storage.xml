@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tv_internal_dir_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/vs_text_title_internal_dir"
+            android:textColor="@color/vs_red_primary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_internal_dir_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/vs_blue_primary"
+            android:textIsSelectable="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_internal_dir_title"
+            tools:text="XXXX" />
+
+        <TextView
+            android:id="@+id/tv_internal_dir_file_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/vs_text_title_internal_dir_file"
+            android:textColor="@color/vs_red_primary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_internal_dir_content" />
+
+        <TextView
+            android:id="@+id/tv_internal_dir_file_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/vs_blue_primary"
+            android:textIsSelectable="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_internal_dir_file_title"
+            tools:text="XXXX" />
+
+        <TextView
+            android:id="@+id/tv_internal_dir_cache_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/vs_text_title_internal_dir_cache"
+            android:textColor="@color/vs_red_primary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_internal_dir_file_content" />
+
+        <TextView
+            android:id="@+id/tv_internal_dir_cache_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/vs_blue_primary"
+            android:textIsSelectable="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_internal_dir_cache_title"
+            tools:text="XXXX" />
+
+        <TextView
+            android:id="@+id/tv_external_dir_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/vs_text_title_external_dir"
+            android:textColor="@color/vs_red_primary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_internal_dir_cache_content" />
+
+        <TextView
+            android:id="@+id/tv_external_dir_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/vs_blue_primary"
+            android:textIsSelectable="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_external_dir_title"
+            tools:text="XXXX" />
+
+        <TextView
+            android:id="@+id/tv_external_dir_private_file_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/vs_text_title_external_dir_private_file"
+            android:textColor="@color/vs_red_primary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_external_dir_content" />
+
+        <TextView
+            android:id="@+id/tv_external_dir_private_file_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/vs_blue_primary"
+            android:textIsSelectable="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_external_dir_private_file_title"
+            tools:text="XXXX" />
+
+        <TextView
+            android:id="@+id/tv_external_dir_private_cache_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/vs_text_title_external_dir_private_cache"
+            android:textColor="@color/vs_red_primary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_external_dir_private_file_content" />
+
+        <TextView
+            android:id="@+id/tv_external_dir_private_cache_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/vs_blue_primary"
+            android:textIsSelectable="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_external_dir_private_cache_title"
+            tools:text="XXXX" />
+
+        <TextView
+            android:id="@+id/tv_external_dir_public_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/vs_text_title_external_dir_public"
+            android:textColor="@color/vs_red_primary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_external_dir_private_cache_content" />
+
+        <TextView
+            android:id="@+id/tv_external_dir_public_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/vs_blue_primary"
+            android:textIsSelectable="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_external_dir_public_title"
+            tools:text="XXXX" />
+
+        <TextView
+            android:id="@+id/tv_internal_total_size_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/vs_text_title_internal_total_size"
+            android:textColor="@color/vs_red_primary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_external_dir_public_content" />
+
+        <TextView
+            android:id="@+id/tv_internal_total_size_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/vs_blue_primary"
+            android:textIsSelectable="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_internal_total_size_title"
+            tools:text="XXXX" />
+
+        <TextView
+            android:id="@+id/tv_internal_free_size_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/vs_text_title_internal_free_size"
+            android:textColor="@color/vs_red_primary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_internal_total_size_content" />
+
+        <TextView
+            android:id="@+id/tv_internal_free_size_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/vs_blue_primary"
+            android:textIsSelectable="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_internal_free_size_title"
+            tools:text="XXXX" />
+
+
+        <TextView
+            android:id="@+id/tv_external_total_size_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/vs_text_title_external_total_size"
+            android:textColor="@color/vs_red_primary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_internal_free_size_content" />
+
+        <TextView
+            android:id="@+id/tv_external_total_size_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/vs_blue_primary"
+            android:textIsSelectable="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_external_total_size_title"
+            tools:text="XXXX" />
+
+        <TextView
+            android:id="@+id/tv_external_free_size_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/vs_text_title_external_free_size"
+            android:textColor="@color/vs_red_primary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_external_total_size_content" />
+
+        <TextView
+            android:id="@+id/tv_external_free_size_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/vs_blue_primary"
+            android:textIsSelectable="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_external_free_size_title"
+            tools:text="XXXX" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

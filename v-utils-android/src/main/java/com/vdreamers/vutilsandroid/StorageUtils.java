@@ -4,9 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.os.StatFs;
 import android.provider.MediaStore;
+
+import androidx.annotation.Nullable;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -19,13 +22,138 @@ import java.io.IOException;
  *
  * @author <a href="mailto:codepoetdream@gmail.com">Mr.D</a>
  */
+@SuppressWarnings({"unused", "WeakerAccess"})
 public class StorageUtils {
 
-    public static final String DEFAULT_DIR_NAME = "StorageUtils";
+    public static final String TAG = StorageUtils.class.getSimpleName();
+
+    public static final File NULL_FILE = new File("");
 
     private StorageUtils() {
-        /* cannot be instantiated */
-        throw new UnsupportedOperationException("cannot be instantiated");
+        // cannot be instantiated
+        throw new UnsupportedOperationException("StorageUtils cannot be instantiated");
+    }
+
+    /**
+     * 获取内部存储目录
+     *
+     * @return file 内部存储目录
+     */
+    public static File getInternalDir() {
+        return Environment.getDataDirectory();
+    }
+
+    /**
+     * 获取内部存储目录普通文件目录
+     *
+     * @param context context 调用方上下文
+     * @return file 内部存储目录普通文件目录
+     */
+    public static File getInternalFilesDir(Context context) {
+        if (context == null) {
+            throw new IllegalArgumentException("context cannot be null");
+        }
+        return context.getFilesDir();
+    }
+
+    /**
+     * 获取内部存储目录缓存目录
+     *
+     * @param context context 调用方上下文
+     * @return file 内部存储目录缓存目录
+     */
+    public static File getInternalCacheDir(Context context) {
+        if (context == null) {
+            throw new IllegalArgumentException("context cannot be null");
+        }
+        return context.getCacheDir();
+    }
+
+    /**
+     * 删除内部存储文件
+     *
+     * @param context 调用方上下文
+     * @param name    文件名
+     * @return 删除是否成功
+     */
+    public static boolean deleteInternalFile(Context context, String name) {
+        if (context == null) {
+            throw new IllegalArgumentException("context cannot be null");
+        }
+        return context.deleteFile(name);
+    }
+
+    /**
+     * 获取内部存储目录所有文件列表
+     *
+     * @param context 调用方上下文
+     * @return 文件名列表数组
+     */
+    public static String[] getInternalFileList(Context context) {
+        if (context == null) {
+            throw new IllegalArgumentException("context cannot be null");
+        }
+        return context.fileList();
+    }
+
+    /**
+     * 获取外部存储私有目录
+     *
+     * @return file 外部存储私有目录
+     */
+    public static File getExternalDir() {
+        if (!isSDCardEnable()) {
+            return NULL_FILE;
+        }
+        return Environment.getExternalStorageDirectory();
+    }
+
+    /**
+     * 获取主外部存储私有目录普通文件目录
+     *
+     * @param context context 调用方上下文
+     * @param type    类型
+     * @return file 主外部存储私有目录普通文件目录
+     */
+    public static File getExternalPrivateFilesDir(Context context, @Nullable String type) {
+        if (context == null) {
+            throw new IllegalArgumentException("context cannot be null");
+        }
+        if (!isSDCardEnable()) {
+            return NULL_FILE;
+        }
+        return context.getExternalFilesDir(type);
+    }
+
+    /**
+     * 获取主外部存储私有目录缓存目录
+     *
+     * @param context context 调用方上下文
+     * @return file 主外部存储私有目录缓存目录
+     */
+    public static File getExternalPrivateCacheDir(Context context) {
+        if (context == null) {
+            throw new IllegalArgumentException("context cannot be null");
+        }
+        if (!isSDCardEnable()) {
+            return NULL_FILE;
+        }
+        return context.getExternalCacheDir();
+    }
+
+    /**
+     * 获取外部存储公共目录
+     *
+     * @return file 外部存储公共目录
+     */
+    public static File getExternalPublicDir(String type) {
+        if (type == null) {
+            throw new IllegalArgumentException("type cannot be null");
+        }
+        if (!isSDCardEnable()) {
+            return NULL_FILE;
+        }
+        return Environment.getExternalStoragePublicDirectory(type);
     }
 
     /**
@@ -36,60 +164,101 @@ public class StorageUtils {
     public static boolean isSDCardEnable() {
         return (Environment.MEDIA_MOUNTED.equals(Environment.getExternalStorageState()) ||
                 !Environment.isExternalStorageRemovable());
-
     }
 
     /**
-     * 获取SD卡路径
+     * 获取系统存储路径
      *
-     * @return SD卡路径
+     * @return file 系统存储路径
      */
-    public static String getSDCardPath() {
-        return Environment.getExternalStorageDirectory().getAbsolutePath() + File.separator;
+    public static File getRootDir() {
+        return Environment.getRootDirectory();
     }
 
     /**
-     * 获取SD卡的剩余容量 单位byte
+     * 获取外部存储的总容量 单位byte
      *
-     * @return SD卡的剩余容量 单位byte
+     * @return 外部存储的总容量 单位byte
      */
-    public static long getSDCardAllSize() {
+    public static long getExternalTotalSize() {
         if (isSDCardEnable()) {
-            StatFs stat = new StatFs(getSDCardPath());
-            // 获取空闲的数据块的数量
-            long availableBlocks = (long) stat.getAvailableBlocks() - 4;
-            // 获取单个数据块的大小（byte）
-            long freeBlocks = stat.getAvailableBlocks();
-            return freeBlocks * availableBlocks;
+            return getExternalDir().getTotalSpace();
         }
         return 0;
+    }
+
+    /**
+     * 获取外部存储的剩余可用容量 单位byte
+     *
+     * @return 外部存储的剩余可用容量 单位byte
+     */
+    public static long getExternalFreeSize() {
+        if (isSDCardEnable()) {
+            return getExternalDir().getFreeSpace();
+        }
+        return 0;
+    }
+
+    /**
+     * 获得内部存储的总容量 单位byte
+     *
+     * @return 内部存储的总容量 单位byte
+     */
+    public static long getInternalTotalSize() {
+        return getInternalDir().getTotalSpace();
+    }
+
+    /**
+     * 内部存储的剩余可用容量 单位byte
+     *
+     * @return 内部存储的剩余可用容量 单位byte
+     */
+    public static long getInternalFreeSize() {
+        return getInternalDir().getFreeSpace();
     }
 
     /**
      * 获取指定路径所在空间的剩余可用容量字节数，单位byte
      *
      * @param filePath 指定路径
-     * @return 容量字节 SDCard可用空间，内部存储可用空间
+     * @return 指定路径所在空间的剩余可用容量字节数
      */
     public static long getFreeBytes(String filePath) {
-        // 如果是sd卡的下的路径，则获取sd卡可用容量
-        if (filePath.startsWith(getSDCardPath())) {
-            filePath = getSDCardPath();
-        } else {// 如果是内部存储的路径，则获取内存存储的可用容量
-            filePath = Environment.getDataDirectory().getAbsolutePath();
+        StatFs statFs = new StatFs(filePath);
+        // 单个数据块的大小（byte）
+        long blockSize;
+        // 空闲的数据块的数量
+        long availableBlocks;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
+            blockSize = statFs.getBlockSizeLong();
+            availableBlocks = statFs.getAvailableBlocksLong();
+        } else {
+            blockSize = (long) statFs.getBlockSize();
+            availableBlocks = (long) statFs.getAvailableBlocks();
         }
-        StatFs stat = new StatFs(filePath);
-        long availableBlocks = (long) stat.getAvailableBlocks() - 4;
-        return stat.getBlockSize() * availableBlocks;
+        return blockSize * availableBlocks;
     }
 
     /**
-     * 获取系统存储路径
+     * 获取指定路径所在空间的总容量字节数，单位byte
      *
-     * @return 系统存储路径
+     * @param filePath 指定路径
+     * @return 指定路径所在空间的总容量字节数
      */
-    public static String getRootDirectoryPath() {
-        return Environment.getRootDirectory().getAbsolutePath();
+    public static long getTotalBytes(String filePath) {
+        StatFs statFs = new StatFs(filePath);
+        // 单个数据块的大小（byte）
+        long blockSize;
+        // 总数据块的数量
+        long totalSize;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
+            blockSize = statFs.getBlockSizeLong();
+            totalSize = statFs.getBlockCountLong();
+        } else {
+            blockSize = (long) statFs.getBlockSize();
+            totalSize = (long) statFs.getBlockCount();
+        }
+        return blockSize * totalSize;
     }
 
     /**
@@ -99,18 +268,19 @@ public class StorageUtils {
      * @param dir     指定目录
      * @return app文件数据路径
      */
+    @SuppressWarnings("ResultOfMethodCallIgnored")
     public static String getFilesPath(Context context, String dir) {
         String directoryPath;
         if (isSDCardEnable()) {
             File file = context.getExternalFilesDir(dir);
             if (file != null) {
-                //外部存储可用
+                // 外部存储可用
                 directoryPath = file.getAbsolutePath();
             } else {
-                directoryPath = context.getFilesDir() + File.separator + DEFAULT_DIR_NAME;
+                directoryPath = context.getFilesDir() + File.separator + dir;
             }
         } else {
-            //外部存储不可用
+            // 外部存储不可用
             directoryPath = context.getFilesDir() + File.separator + dir;
         }
         File file = new File(directoryPath);
@@ -119,7 +289,7 @@ public class StorageUtils {
             file.mkdirs();
         }
         if (BuildConfig.DEBUG) {
-            LogUtils.d("StorageUtils", directoryPath);
+            LogUtils.d(TAG, directoryPath);
         }
         return directoryPath;
     }
@@ -130,18 +300,19 @@ public class StorageUtils {
      * @param context 调用方上下文
      * @return app缓存路径
      */
+    @SuppressWarnings("ResultOfMethodCallIgnored")
     public static String getCachePath(Context context, String dir) {
         String directoryPath;
         if (isSDCardEnable()) {
             File file = context.getExternalCacheDir();
             if (file != null) {
-                //外部存储可用
+                // 外部存储可用
                 directoryPath = file.getAbsolutePath();
             } else {
-                directoryPath = context.getFilesDir() + File.separator + DEFAULT_DIR_NAME;
+                directoryPath = context.getCacheDir() + File.separator + dir;
             }
         } else {
-            //外部存储不可用
+            // 外部存储不可用
             directoryPath = context.getCacheDir() + File.separator + dir;
         }
         File file = new File(directoryPath);
@@ -150,7 +321,7 @@ public class StorageUtils {
             file.mkdirs();
         }
         if (BuildConfig.DEBUG) {
-            LogUtils.d("StorageUtils", directoryPath);
+            LogUtils.d(TAG, directoryPath);
         }
         return directoryPath;
     }
