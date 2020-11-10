@@ -9,14 +9,14 @@ import java.util.Locale;
 /**
  * 线程安全日期工具类
  * <p>
- * date 2019/04/12 11:24:57
+ * date 2020/11/10 16:59:00
  *
- * @author <a href="mailto:danhuangpai@2dfire.com">蛋黄派</a>
+ * @author <a href="mailto:codepoetdream@gmail.com">Mr D</a>
  */
 @SuppressWarnings("unused")
 public class DateUtils {
 
-    private static ThreadLocal<SimpleDateFormat> sSimpleDateFormatThreadLocal = new ThreadLocal<>();
+    private static ThreadLocal<SimpleDateFormat> SIMPLE_DATE_FORMAT_THREAD_LOCAL = new ThreadLocal<>();
     /**
      * 简单的日期格式化
      */
@@ -47,13 +47,13 @@ public class DateUtils {
         if (pattern == null) {
             pattern = FORMAT_PATTERN;
         }
-        SimpleDateFormat df = sSimpleDateFormatThreadLocal.get();
+        SimpleDateFormat df = SIMPLE_DATE_FORMAT_THREAD_LOCAL.get();
         if (df == null) {
             df = new SimpleDateFormat(pattern, Locale.getDefault());
-            sSimpleDateFormatThreadLocal.set(df);
+            SIMPLE_DATE_FORMAT_THREAD_LOCAL.set(df);
         } else if (!pattern.equals(df.toPattern())) {
             df = new SimpleDateFormat(pattern, Locale.getDefault());
-            sSimpleDateFormatThreadLocal.set(df);
+            SIMPLE_DATE_FORMAT_THREAD_LOCAL.set(df);
         }
         return df;
     }

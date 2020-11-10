@@ -275,7 +275,7 @@ public class StorageUtils {
             File file = context.getExternalFilesDir(dir);
             if (file != null) {
                 // 外部存储可用
-                directoryPath = file.getAbsolutePath();
+                directoryPath = file.getAbsolutePath()  + File.separator + dir;
             } else {
                 directoryPath = context.getFilesDir() + File.separator + dir;
             }
@@ -307,7 +307,7 @@ public class StorageUtils {
             File file = context.getExternalCacheDir();
             if (file != null) {
                 // 外部存储可用
-                directoryPath = file.getAbsolutePath();
+                directoryPath = file.getAbsolutePath() + File.separator + dir;
             } else {
                 directoryPath = context.getCacheDir() + File.separator + dir;
             }
